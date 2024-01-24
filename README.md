@@ -1,2 +1,4 @@
-# KIEN_TRUC_PM_TUAN1
-TUAN1 24/01/10
+# KIEN_TRUC_PM
+Name: Le Quoc Phong
+Mssv: 20070031
+
