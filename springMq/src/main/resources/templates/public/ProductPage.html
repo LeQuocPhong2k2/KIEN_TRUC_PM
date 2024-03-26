@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<body>
+  <table style="width: 1010px;">
+    <tr>
+      <td>
+       <form method="GET" action="home">
+         <input type="submit" value="Home">
+       </form>
+      </td>
+    </tr>
+    <tr>
+      <td>Danh sach san pham</td>
+    </tr>
+    <tr>
+      <td>
+        <table border="1" style="width: 100%">
+          <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </thead>
+         <tbody>
+             <tr th:each="product :${dsProduct}">
+               <td th:text="${product.productId}"></td>
+               <td th:text="${product.productName}"></td>
+               <td th:text="${product.price}"></td>
+               <td th:text="${product.quantity}"></td>
+             </tr>
+         </tbody>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

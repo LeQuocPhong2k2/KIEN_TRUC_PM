@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dat hang online</title>
+</head>
+<body>
+    <table style="width: 1010px;">
+        <tr>
+            <td>
+                <form method="GET" action="/home">
+                    <input type="submit" value="Home">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <form method="post" action="/order/add" enctype="multipart/form-data" th:object="${orderOnline}">
+        <table>
+            <tr>
+                <td>Form dat hang online</td>
+            </tr>
+            <tr>
+                <td>
+                    Người đặt hàng:
+                </td>
+                <td>
+                    <label>
+                        <input type="text" th:field="${orderOnline.orderName}" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email liên hệ:
+                </td>
+                <td>
+                    <label>
+                        <input type="text" th:field="${orderOnline.orderEmail}" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                  Địa chỉ giao hàng:
+                </td>
+                <td>
+                    <label>
+                        <input type="text" th:field="${orderOnline.orderAddress}" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   Chọn sản phẩm:
+                </td>
+                <td>
+                    <label>
+                        <select name="productId">
+                            <option th:each="e : ${dsProduct}" th:text="${e.productName}" th:value="${e.productId}"></option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nhập số lượng:
+                </td>
+                <td>
+                    <label>
+                        <input type="number" th:field="${orderOnline.orderQuantity}" />
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Buy">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
